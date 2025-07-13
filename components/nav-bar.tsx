@@ -23,11 +23,11 @@ export default function Navbar() {
       <nav className="px-4 py-2 bg-background text-muted-foreground flex justify-between items-center">
         <Link href={"/"}>
           <h3 className="text-lg font-bold hover:text-[var(--foreground)] transition-colors">
-            My Portfolio
+            YP
           </h3>
         </Link>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2">
           <NavItem href="/resume" label="Resume" />
           <NavItem href="/about" label="About" />
           <NavItem href="/projects" label="Projects" />

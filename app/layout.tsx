@@ -11,7 +11,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+          <meta charSet="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Yash Parakh</title>
+          <link rel="icon" href="/favicon.ico" />
+        </head>
         <body className="h-screen">
           <ThemeProvider
             attribute="class"
