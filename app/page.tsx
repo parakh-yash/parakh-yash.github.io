@@ -5,7 +5,7 @@ import {
   desc_before_experience,
   desc_after_experience,
 } from "@/data/me";
-import { LinkedIn, Github } from "@/components/icons/icons";
+import { LinkedIn, Github } from "@/components/icons";
 
 export default function Home() {
   return (

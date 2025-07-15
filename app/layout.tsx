@@ -1,5 +1,4 @@
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/nav-bar";
 import { ReactNode } from "react";
 import "./globals.css"; // Ensure global styles are imported
 
