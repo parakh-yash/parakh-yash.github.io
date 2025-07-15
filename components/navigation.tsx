@@ -5,11 +5,9 @@ import Link from "next/link";
 import { Menu as MenuIcon, X as CloseIcon } from "lucide-react";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import ModeToggle from "./mode-toggel";
