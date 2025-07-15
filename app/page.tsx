@@ -1,37 +1,52 @@
 import { Experience } from "@/data/personal-stats";
-import { name, title } from "@/data/me";
+import {
+  name,
+  title,
+  desc_before_experience,
+  desc_after_experience,
+} from "@/data/me";
+import { LinkedIn, Github } from "@/components/icons/icons";
 
 export default function Home() {
   return (
-    <div className="mx-auto my-auto overflow-hidden rounded-xl shadow-md ">
-      <div className="md:flex">
-        <div className="md:shrink-0">
-          <img
-            className="h-full w-48 object-cover md:h-full md:w-80 mx-auto"
-            src="yash.jpg"
-            alt="Modern building architecture"
-          />
-        </div>
-        <div className="p-8 max-w-103 flex flex-col justify-center items-center md:items-start">
-          <div className="text-sm font-semibold tracking-wide text-indigo-500 uppercase">
-            {name}
-          </div>
+    <div className="sm:flex sm:flex-row h-full p-4 lg:p-8 overflow-y-auto">
+      <img
+        src="yash.jpg"
+        alt="Yash Parakh"
+        className=" w-full h-[40vh] min-h-80 rounded-lg
+        object-cover object-top overflow-hidden 
+        sm:h-full sm:flex-10
+        lg:flex-7 "
+      />
+
+      <div
+        className="flex-10 pt-8 
+      flex flex-col sm:pt-0 sm:ps-8 h-full sm:justify-center items-center"
+      >
+        <h1 className="text-5xl font-bold ">{name}</h1>
+        <h2 className="text-3xl text-gray-700">{title}</h2>
+        <p className="mt-4 max-w-100 text-gray-600 text-lg text-justify">
+          {desc_before_experience}
+          <b>
+            <Experience />
+          </b>
+          {desc_after_experience}
+        </p>
+        <div className="flex flex-row gap-4 mt-6 justify-center items-center">
           <a
-            href="#"
-            className="mt-1 block text-lg leading-tight font-medium hover:underline"
+            href="https://www.linkedin.com/in/jainyash23/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {title}
+            <LinkedIn className="text-foreground w-6 h-6 hover:text-foreground/70 transition duration-400" />
           </a>
-          <p className="mt-2 text-gray-500 text-center md:text-start">
-            I love building software that makes a difference. With a passion for
-            innovation and a commitment to excellence, I strive to create
-            solutions that enhance user experiences and drive business success.
-            I have total{" "}
-            <b>
-              <Experience />
-            </b>{" "}
-            years of experience in software development.
-          </p>
+          <a
+            href="https://github.com/yash-parakh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github className="text-foreground w-8 h-8 hover:text-foreground/70 transition duration-400" />
+          </a>
         </div>
       </div>
     </div>

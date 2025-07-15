@@ -3,6 +3,8 @@ import Navbar from "@/components/nav-bar";
 import { ReactNode } from "react";
 import "./globals.css"; // Ensure global styles are imported
 
+import { NavigationMenuDemo } from "@/components/navigation";
+
 interface RootLayoutProps {
   children: ReactNode;
 }
@@ -28,8 +30,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             disableTransitionOnChange
           >
             <div className="flex flex-col h-full">
-              <Navbar />
-              {children}
+              <NavigationMenuDemo />
+              <div className="flex-1 overflow-y-auto">{children}</div>
             </div>
           </ThemeProvider>
         </body>
