@@ -21,7 +21,7 @@ export default function Home() {
 
       <div
         className="flex-10 pt-8 
-      flex flex-col sm:pt-0 sm:ps-8 h-full sm:justify-center items-center"
+      flex flex-col sm:pt-0 sm:ps-8 sm:h-full sm:justify-center items-center"
       >
         <h1 className="text-5xl font-bold ">{name}</h1>
         <h2 className="text-3xl text-gray-700">{title}</h2>
