@@ -7,7 +7,7 @@ import {
   linkedIn,
   github
 } from "@/data/me";
-import { LinkedIn, Github, Download } from "@/components/icons";
+import { LinkedIn, Github } from "@/components/icons";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
          md:w-90 md:h-90 lg:w-100 lg:h-100
         object-cover object-top overflow-hidden"
       />
-      
+
       <div
         className=" 
       flex flex-col items-center"
