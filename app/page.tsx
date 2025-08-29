@@ -5,11 +5,9 @@ import {
   desc_before_experience,
   desc_after_experience,
   linkedIn,
-  github,
-  resumne_gdrive_link,
+  github
 } from "@/data/me";
 import { LinkedIn, Github, Download } from "@/components/icons";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
