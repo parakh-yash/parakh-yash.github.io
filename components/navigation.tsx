@@ -16,7 +16,7 @@ export function NavigationMenuDemo() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav className="relative w-full sticky top-0 z-50 bg-background">
+    <nav className="relative w-full h-13 sticky top-0 z-50 bg-background">
       {/* Hamburger button for mobile */}
       <button
         className="sm:hidden p-3 rounded focus:outline-none"
@@ -28,6 +28,11 @@ export function NavigationMenuDemo() {
 
       <div className="sm:hidden top-2 right-2  absolute">
         <ModeToggle />
+      </div>
+
+      <div className="top-2 start-12 absolute">
+        <Link href="/"><h1 className="text-2xl">Yash Parakh</h1></Link>
+        
       </div>
 
       {/* Navigation menu */}

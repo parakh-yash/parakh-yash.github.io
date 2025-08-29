@@ -13,19 +13,20 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="sm:flex sm:flex-row h-full p-4 lg:p-8 overflow-y-auto">
+    <div className="flex flex-col md:flex-row  h-full ps-4 pe-4 overflow-y-auto  justify-center items-center gap-6 md:gap-12 lg:gap-16">
       <img
         src="yash.jpg"
         alt="Yash Parakh"
-        className=" w-full h-[40vh] min-h-80 rounded-lg
-        object-cover object-top overflow-hidden 
-        sm:h-full sm:flex-10
-        lg:flex-7 "
+        // height={50}
+        // width={50}
+        className=" w-80 h-80 rounded-full
+         md:w-90 md:h-90 lg:w-100 lg:h-100
+        object-cover object-top overflow-hidden"
       />
 
       <div
-        className="flex-10 pt-8 
-      flex flex-col sm:pt-0 sm:ps-8 sm:h-full sm:justify-center items-center"
+        className=" 
+      flex flex-col items-center"
       >
         <h1 className="text-5xl font-bold ">{name}</h1>
         <h2 className="text-3xl text-foreground/64">{title}</h2>
@@ -43,11 +44,11 @@ export default function Home() {
           <a href={github} target="_blank" rel="noopener noreferrer">
             <Github className="text-foreground w-8 h-8 hover:text-foreground/70 transition duration-400" />
           </a>
-          <a href={resumne_gdrive_link}>
+          {/* <a href={resumne_gdrive_link}>
             <Button variant={"outline"} className="inline-flex">
               <Download /> Resume
             </Button>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
