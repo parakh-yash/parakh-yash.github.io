@@ -30,7 +30,7 @@ export function NavigationMenuDemo() {
         <ModeToggle />
       </div>
 
-      <div className="top-2 start-12 absolute">
+      <div className="top-2 start-12 absolute" onClick={() => setOpen(false)} >
         <Link href="/"><h1 className="text-2xl">Yash Parakh</h1></Link>
         
       </div>
@@ -48,6 +48,7 @@ export function NavigationMenuDemo() {
               <NavigationMenuLink
                 asChild
                 className={navigationMenuTriggerStyle()}
+                onClick={() => setOpen(false)} // Close menu on link click
               >
                 <Link href="/resume">Resume</Link>
               </NavigationMenuLink>
@@ -56,6 +57,7 @@ export function NavigationMenuDemo() {
               <NavigationMenuLink
                 asChild
                 className={navigationMenuTriggerStyle()}
+                onClick={() => setOpen(false)} // Close menu on link click
               >
                 <Link href="/projects">Projects</Link>
               </NavigationMenuLink>
@@ -64,6 +66,7 @@ export function NavigationMenuDemo() {
               <NavigationMenuLink
                 asChild
                 className={navigationMenuTriggerStyle()}
+                onClick={() => setOpen(false)} // Close menu on link click
               >
                 <Link href="/about">About</Link>
               </NavigationMenuLink>
@@ -72,11 +75,12 @@ export function NavigationMenuDemo() {
               <NavigationMenuLink
                 asChild
                 className={navigationMenuTriggerStyle()}
+                onClick={() => setOpen(false)} // Close menu on link click
               >
                 <Link href="/contact">Contact</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem className="hidden sm:block">
+            <NavigationMenuItem className="hidden sm:block" onClick={() => setOpen(false)}>
               <ModeToggle />
             </NavigationMenuItem>
           </NavigationMenuList>

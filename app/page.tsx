@@ -11,13 +11,13 @@ import { LinkedIn, Github } from "@/components/icons";
 
 export default function Home() {
   return (
-    <div className="flex flex-col md:flex-row  h-full ps-4 pe-4 overflow-y-auto  justify-center items-center gap-6 md:gap-12 lg:gap-16">
+    <div className="flex flex-col md:flex-row  h-full ps-4 pe-4 overflow-auto  sm:justify-center items-center gap-6 md:gap-12 lg:gap-16">
       <img
         src="yash.jpg"
         alt="Yash Parakh"
         className=" w-80 h-80 rounded-full
          md:w-90 md:h-90 lg:w-100 lg:h-100
-        object-cover object-top overflow-hidden"
+        object-cover object-top"
       /> 
 
       <div
