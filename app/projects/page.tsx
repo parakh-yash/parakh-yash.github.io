@@ -32,7 +32,16 @@ export default function ProjectsPage() {
                         className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col"
                     >
                         <h2 className="text-2xl font-semibold mb-2">{project.name}</h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{project.description}</p>
+                                                <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{project.description}</p>
+                                                {project.topics && project.topics.length > 0 && (
+                                                    <div className="flex flex-wrap gap-2 mb-4">
+                                                        {project.topics.map((topic) => (
+                                                            <span key={topic} className="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded-full text-gray-700 dark:text-gray-300">
+                                                                {topic}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                )}
                         <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">
                             <span>Created: {new Date(project.created_at).toLocaleDateString()}</span>
                             <span className="ml-4">Last updated: {new Date(project.updated_at).toLocaleDateString()}</span>

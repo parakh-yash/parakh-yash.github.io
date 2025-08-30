@@ -15,17 +15,24 @@ export async function fetchRepoReadme(owner: string, repo: string): Promise<stri
 import { Project } from "@/types/project";
 
 const fetchProjectsFromGitHub = async (username: string): Promise<Project[]> => {
-  const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&type=public`);
+  const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&type=public`, {
+    headers: {
+      Accept: 'application/vnd.github.mercy-preview+json', // Needed for topics
+    },
+  });
   if (!res.ok) throw new Error("Failed to fetch repositories from GitHub");
   const repos = await res.json();
-  return repos.map((repo: any) => ({
-    name: repo.name,
-    description: repo.description || "No description provided.",
-    github_link: repo.html_url,
-    demo_link: repo.homepage || undefined,
-    created_at: repo.created_at,
-    updated_at: repo.updated_at,
-  }));
+  return repos
+    .filter((repo: any) => repo.description !== null)
+    .map((repo: any) => ({
+      name: repo.name,
+      description: repo.description || "No description provided.",
+      github_link: repo.html_url,
+      demo_link: repo.homepage || undefined,
+      created_at: repo.created_at,
+      updated_at: repo.updated_at,
+      topics: Array.isArray(repo.topics) ? repo.topics : [],
+    }));
 };
 
 export { fetchProjectsFromGitHub };
