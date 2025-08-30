@@ -62,7 +62,7 @@ export function NavigationMenuDemo() {
                 <Link href="/projects">Projects</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuLink
                 asChild
                 className={navigationMenuTriggerStyle()}
@@ -79,7 +79,7 @@ export function NavigationMenuDemo() {
               >
                 <Link href="/contact">Contact</Link>
               </NavigationMenuLink>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
             <NavigationMenuItem className="hidden sm:block" onClick={() => setOpen(false)}>
               <ModeToggle />
             </NavigationMenuItem>
