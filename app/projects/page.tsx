@@ -2,7 +2,8 @@
 // It fetched the list of all the public reopositoried from GitHub API and displayed them in a grid format with links to each repository.
 import React from "react";
 import Link from "next/link";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import { Project } from "@/types/project";
 import { fetchProjectsFromGitHub } from "@/data/projects";
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,7 @@ export default function ProjectsPage() {
 
     return (
         <div className="p-4 sm:p-8 lg:p-12 h-full overflow-auto">
-            <h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
+            {/* <h1 className="text-4xl font-bold mb-8 text-center">Projects</h1> */}
             {loading && <div className="text-center">Loading projects...</div>}
             {error && <div className="text-center text-red-500">{error}</div>}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -32,14 +33,18 @@ export default function ProjectsPage() {
                     >
                         <h2 className="text-2xl font-semibold mb-2">{project.name}</h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{project.description}</p>
+                        <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                            <span>Created: {new Date(project.created_at).toLocaleDateString()}</span>
+                            <span className="ml-4">Last updated: {new Date(project.updated_at).toLocaleDateString()}</span>
+                        </div>
                         <div className="mt-auto">
-                            <Link href={project.github_link} target="_blank" rel="noopener noreferrer">
+                            <Link href={project.github_link} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
                                 <Button variant="outline" className="mr-2 inline-flex items-center">
-                                    <Github className="w-4 h-4 mr-2" /> GitHub Repository
+                                    <SiGithub className="w-4 h-4 mr-2" /> GitHub Repository
                                 </Button>
                             </Link>
                             {project.demo_link && (
-                                <Link href={project.demo_link} target="_blank" rel="noopener noreferrer">
+                                <Link href={project.demo_link} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
                                     <Button variant="outline" className="inline-flex items-center">
                                         <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
                                     </Button>

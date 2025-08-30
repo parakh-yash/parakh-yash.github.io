@@ -7,6 +7,7 @@ import {
   linkedIn,
   github
 } from "@/data/me";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { LinkedIn, Github } from "@/components/icons";
 
 export default function Home() {
@@ -38,7 +39,7 @@ export default function Home() {
             <LinkedIn className="text-foreground w-6 h-6 hover:text-foreground/70 transition duration-400" />
           </a>
           <a href={github} target="_blank" rel="noopener noreferrer">
-            <Github className="text-foreground w-8 h-8 hover:text-foreground/70 transition duration-400" />
+            <SiGithub className="text-foreground w-8 h-8 hover:text-foreground/70 transition duration-400" />
           </a>
           {/* <a href={resumne_gdrive_link}>
             <Button variant={"outline"} className="inline-flex">
